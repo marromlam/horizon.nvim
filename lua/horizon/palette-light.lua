@@ -4,30 +4,48 @@
 local palette = {
   ansi = {
     bright = {
-      blue = '#3FC4DE',
-      cyan = '#6BE4E6',
-      green = '#3FDAA4',
-      magenta = '#F075B5',
-      red = '#EC6A88',
-      yellow = '#FBC3A7',
+      -- blue = '#3FC4DE',
+      -- cyan = '#6BE4E6',
+      -- green = '#3FDAA4',
+      -- magenta = '#F075B5',
+      -- red = '#EC6A88',
+      -- yellow = '#FBC3A7',
+      --
+     cyan = "#666661",
+     red = "#992e2e",
+     magenta = "#4c3226",
+     green = "#a67c53",
+     blue = "#4c7399",
+     -- "#bf9986",
+     yellow = "#d97742",
+     -- "#34302d",
     },
     normal = {
-      blue = '#26BBD9',
-      cyan = '#59E1E3',
-      green = '#29D398',
-      magenta = '#EE64AC',
-      red = '#E95678',
-      yellow = '#FAB795',
+      -- blue = '#26BBD9',
+      -- cyan = '#59E1E3',
+      -- green = '#29D398',
+      -- magenta = '#EE64AC',
+      -- red = '#E95678',
+      -- yellow = '#FAB795',
+      --
+      cyan = "#7f7f7a",
+      red = "#b23636",
+      magenta = "#664233",
+      green = "#bf8f60",
+      blue = "#5986b2",
+      -- "#d9ae98",
+      yellow = "#f2854a",
+      -- "#4c4742",
     },
   },
   syntax = {
-    amethyst = '#8A31B9',
-    black = '#333333',
-    crimson = '#DA103F',
-    elm = '#1D8991',
-    jaffa = '#F77D26',
-    tango = '#F6661E',
-    thunderbird = '#DC3318',
+    apricot = '#8A31B9',
+    cranberry = '#333333',
+    gray = '#DA103F',
+    lavender = '#1D8991',
+    rosebud = '#F77D26',
+    tacao = '#F6661E',
+    turquoise = '#DC3318',
   },
   ui = {
     accent = '#F9CBBE',
@@ -158,4 +176,3 @@ local theme = {
 }
 
 return { theme = theme, palette = palette }
--- vim: set nomodifiable :
