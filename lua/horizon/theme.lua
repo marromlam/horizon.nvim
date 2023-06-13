@@ -26,23 +26,44 @@ end
 local function get_custom_highlights(data)
   local d = data ---@module 'horizon.palette-dark'
   local t, p = d.theme, d.palette
-  return {
-    hint = p.syntax.lavender,
-    info = p.syntax.turquoise,
-    warn = p.syntax.apricot,
-    error = t.error,
-    error_bg = tint(t.error, -0.8), -- #33222c,
-    warn_bg = tint(p.syntax.apricot, -0.8), -- #332e31,
-    info_bg = tint(p.syntax.turquoise, -0.7), -- #1e3132,
-    hint_bg = tint(p.syntax.lavender, -0.7), -- #252732,
-    purple1 = tint(p.syntax.lavender, -0.2), -- #B180D7,
-    gray = '#4B4C53',
-    gold = '#C09553',
-    blue = '#042E48',
-    diff_change = '#273842',
-    diff_text = '#314753',
-    ok = t.positive,
-  }
+  local sign = 1
+  if  vim.o.background == "light" then
+    return {
+      hint = p.syntax.lavender,
+      info = p.syntax.turquoise,
+      warn = p.syntax.apricot,
+      error = t.error,
+      error_bg = tint(t.error, -0.8), -- #33222c,
+      warn_bg = tint(p.syntax.apricot, 3), -- #332e31,
+      info_bg = tint(p.syntax.turquoise, -0.7), -- #1e3132,
+      hint_bg = tint(p.syntax.lavender, -0.7), -- #252732,
+      purple1 = tint(p.syntax.lavender, -0.2), -- #B180D7,
+      gray = '#4B4C53',
+      gold = '#C09553',
+      blue = '#042E48',
+      diff_change = '#273842',
+      diff_text = '#314753',
+      ok = t.positive,
+    }
+  else
+    return {
+      hint = p.syntax.lavender,
+      info = p.syntax.turquoise,
+      warn = p.syntax.apricot,
+      error = t.error,
+      error_bg = tint(t.error, -0.8), -- #33222c,
+      warn_bg = tint(p.syntax.apricot, -0.8), -- #332e31,
+      info_bg = tint(p.syntax.turquoise, -0.7), -- #1e3132,
+      hint_bg = tint(p.syntax.lavender, -0.7), -- #252732,
+      purple1 = tint(p.syntax.lavender, -0.2), -- #B180D7,
+      gray = '#4B4C53',
+      gold = '#C09553',
+      blue = '#042E48',
+      diff_change = '#273842',
+      diff_text = '#314753',
+      ok = t.positive,
+    }
+  end
 end
 
 ---@param theme horizon.HighlightDef
@@ -129,8 +150,8 @@ local function get_highlights(data, custom)
     ['WarningMsg'] = { fg = custom.warn, bg = t.bg },
     ['DiffAdd'] = { bg = t.diff_added_bg },
     ['DiffDelete'] = { bg = t.diff_deleted_bg },
-    ['DiffChange'] = { bg = custom.diff_change },
-    ['DiffText'] = { bg = custom.diff_text },
+    ['DiffChange'] = { bg = t.visual },
+    ['DiffText'] = { bg = t.visual, bold=true, underline=true },
     ['QuickFixLine'] = { bg = custom.blue },
     ['MatchParen'] = { fg = t.match_paren, underline = true },
     ['Cursor'] = { fg = t.cursor_fg, bg = t.cursor_bg },
