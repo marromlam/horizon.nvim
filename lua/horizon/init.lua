@@ -11,6 +11,7 @@ defaults.plugins = {
   notify = true,
   symbols_outline = true,
   telescope = true,
+  fzf_lua = true,
   nvim_tree = true,
   neo_tree = true,
   gitsigns = true,
