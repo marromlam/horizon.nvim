@@ -33,7 +33,7 @@ local function get_custom_highlights(data)
       info = p.syntax.turquoise,
       warn = p.syntax.apricot,
       error = t.error,
-      error_bg = tint(t.error, -0.8), -- #33222c,
+      error_bg = tint(t.error, 0.75), -- #33222c,
       warn_bg = tint(p.syntax.apricot, 3), -- #332e31,
       info_bg = tint(p.syntax.turquoise, 3), -- #1e3132,
       hint_bg = tint(p.syntax.lavender, 3), -- #252732,
